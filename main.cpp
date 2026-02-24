@@ -5,6 +5,7 @@
 #define HEIGHT 600
 #define CIRCLE_RADIUS 60 
 #define SHADOW_CIRCLE_RADIUS 140
+#define RAY_NUMBERS 100
 
 #define COLOR_WHITE 0xffffff
 
@@ -43,6 +44,14 @@ void FillCircle(SDL_Surface* surface , Circle circle , Uint32 color){
 
 }
 
+void generate_rays(Circle circle , Ray rays[RAY_NUMBERS]){
+  for(int i = 0 ; i < RAY_NUMBERS ; i++){
+    double angle = (double)i / RAY_NUMBERS * 2 * M_PI;
+    Ray ray = {circle.x , circle.y  , angle};
+    rays[i] = ray;
+  }
+}
+
 int main(int argc  , char** args){
   SDL_Window* window = SDL_CreateWindow("Ray Tracing", SDL_WINDOWPOS_CENTERED , SDL_WINDOWPOS_CENTERED , WIDTH , HEIGHT, 0);
 
@@ -50,7 +59,10 @@ int main(int argc  , char** args){
   
   Circle circle = {100 , 100 , CIRCLE_RADIUS};
   Circle shadow_circle = {600 , 300, SHADOW_CIRCLE_RADIUS};
-
+  
+  Ray rays[RAY_NUMBERS];
+  generate_rays(circle , rays);
+  
   SDL_Event event ;
   int running = 1;
   
