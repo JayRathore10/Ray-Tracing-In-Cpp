@@ -5,7 +5,7 @@
 #define HEIGHT 600
 #define CIRCLE_RADIUS 40 
 #define SHADOW_CIRCLE_RADIUS 140
-#define RAY_NUMBERS 500
+#define RAY_NUMBERS 550
 #define RAY_THICKNESS 1
 
 #define COLOR_WHITE 0xffffff
@@ -96,7 +96,9 @@ void FillRays(SDL_Surface* surface , Ray rays[RAY_NUMBERS] , Uint32 color , Circ
 }
 
 int main(int argc  , char** args){
-  SDL_Window* window = SDL_CreateWindow("Ray Tracing", SDL_WINDOWPOS_CENTERED , SDL_WINDOWPOS_CENTERED , WIDTH , HEIGHT, 0);
+  SDL_Window* window = SDL_CreateWindow("Ray Tracing", SDL_WINDOWPOS_CENTERED , SDL_WINDOWPOS_CENTERED , WIDTH , HEIGHT , 0);
+
+  // SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN_DESKTOP);
 
   SDL_Surface* surface = SDL_GetWindowSurface(window);
   
