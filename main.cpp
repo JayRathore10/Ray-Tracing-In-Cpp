@@ -2,7 +2,7 @@
 #include<cmath>
 
 #define WIDTH 1200
-#define HEIGHT 400
+#define HEIGHT 600
 #define COLOR_WHITE 0xffffff
 
 typedef struct Circle{
@@ -45,8 +45,9 @@ int main(int argc  , char** args){
 
   SDL_Surface* surface = SDL_GetWindowSurface(window);
   
-  Circle circle = {100 , 100 , 80};
-  
+  Circle circle = {100 , 100 , 60};
+  Circle shadow_circle = {600 , 300, 140};
+
   SDL_Event event ;
   int running = 1;
   
@@ -58,8 +59,8 @@ int main(int argc  , char** args){
       }
       
       FillCircle(surface  , circle , COLOR_WHITE);
+      FillCircle(surface , shadow_circle , COLOR_WHITE);
       SDL_UpdateWindowSurface(window);
-      
     }
   }
   
