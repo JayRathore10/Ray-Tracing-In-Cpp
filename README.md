@@ -14,6 +14,13 @@ The primary goal of this repository is educational: to understand how ray tracin
 
 ---
 
+## Demo Video
+
+[Watch Demo Video](assets/demo.mp4)
+
+![Ray Tracing Demo](assets/demo.gif)
+---
+
 ## Screenshots
 
 ### Render Output 1
