@@ -9,6 +9,7 @@
 #define RAY_THICKNESS 3
 
 #define COLOR_WHITE 0xffffff
+#define COLOR_BLACK 0x000000
 
 typedef struct Circle{
   double x ;
@@ -100,6 +101,8 @@ int main(int argc  , char** args){
   
   Circle circle = {200, 200 , CIRCLE_RADIUS};
   Circle shadow_circle = {550 , 300, SHADOW_CIRCLE_RADIUS};
+
+  SDL_Rect earse_rect = (SDL_Rect){0 , 0 , WIDTH , HEIGHT};
   
   Ray rays[RAY_NUMBERS];
   generate_rays(circle , rays);
@@ -121,6 +124,7 @@ int main(int argc  , char** args){
       }
 
       FillCircle(surface  , circle , COLOR_WHITE);
+      SDL_FillRect(surface ,&earse_rect , COLOR_BLACK);
       FillCircle(surface , shadow_circle , COLOR_WHITE);
       FillRays(surface , rays , COLOR_WHITE ,shadow_circle);
       SDL_UpdateWindowSurface(window);
