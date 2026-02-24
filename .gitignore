@@ -1,0 +1,11 @@
+# Executables
+main
+main.exe
+*.exe
+
+# Object files
+*.o
+*.obj
+
+# Build artifacts
+*.out
