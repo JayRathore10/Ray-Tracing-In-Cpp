@@ -113,7 +113,13 @@ int main(int argc  , char** args){
         running = false ;
         SDL_Delay(10);
       }
-      
+
+      if(event.type == SDL_MOUSEMOTION && event.motion.state != 0){
+        circle.x = event.motion.x;
+        circle.y = event.motion.y;
+        generate_rays(circle , rays);
+      }
+
       FillCircle(surface  , circle , COLOR_WHITE);
       FillCircle(surface , shadow_circle , COLOR_WHITE);
       FillRays(surface , rays , COLOR_WHITE ,shadow_circle);
